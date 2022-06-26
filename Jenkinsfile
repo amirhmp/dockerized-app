@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 bat 'docker build -t piped-docker-app .'
-                bat 'docker run piped-docker-app'
+                // bat 'docker run piped-docker-app'
                 // bat 'start npm start'
             }
         }
