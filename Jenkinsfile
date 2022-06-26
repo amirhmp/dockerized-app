@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                bat 'docker build -t piped-docker-app .'
+                bat "docker build -t piped-docker-app:${currentBuild.number} ."
                 // bat 'docker run piped-docker-app'
                 // bat 'start npm start'
             }
