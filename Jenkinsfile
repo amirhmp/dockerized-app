@@ -5,6 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
         stage('Test') {
@@ -15,6 +17,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'docker build -t piped-docker-app .'
+                sh 'docker run piped-docker-app'
             }
         }
     }
