@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                // bat 'npm install'
+                bat 'npm install'
                 // bat 'npm run build'
             }
         }
@@ -17,8 +17,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                bat 'docker build -t piped-docker-app .'
-                bat 'docker run piped-docker-app'
+                // bat 'docker build -t piped-docker-app .'
+                // bat 'docker run piped-docker-app'
+                bat 'npm start'
             }
         }
     }
