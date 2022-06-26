@@ -19,7 +19,7 @@ pipeline {
                 echo 'Deploying....'
                 // bat 'docker build -t piped-docker-app .'
                 // bat 'docker run piped-docker-app'
-                bat 'npm start'
+                bat 'start npm start'
             }
         }
     }
