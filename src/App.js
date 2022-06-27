@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Welcome to CI/CD Era.
+          Welcome to the CI/CD Era.
         </a>
       </header>
     </div>
