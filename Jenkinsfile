@@ -16,10 +16,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying..'
                 bat "docker build -t piped-docker-app:${currentBuild.number} ."
                 bat "docker tag piped-docker-app:${currentBuild.number} piped-docker-app:latest"
-                // bat 'docker run piped-docker-app'
+                bat "docker rm -f bonab-app-${currentBuild.number - 1}"
+                bat "docker run -d --name bonab-app-${currentBuild.number} -p 80:3000 piped-docker-app:latest"
                 // bat 'start npm start'
             }
         }
